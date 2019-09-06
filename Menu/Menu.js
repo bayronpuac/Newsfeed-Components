@@ -33,3 +33,62 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+  
+
+function createMenu(menuItems){
+  const menu = document.createElement('div');
+  const menuList = document.createElement('ul');
+
+  menu.appendChild(menuList);
+
+  menu.classList.add('menu');
+
+  menuItems.forEach(item => {
+    li = document.createElement('li');
+    li.textContent = item;
+    menuList.appendChild(li);
+  });
+
+  const menuButton = document.querySelector('.menu-button');
+
+  menuButton.addEventListener('click', (e) =>{
+    console.log('yeah, it works');
+    menu.classList.toggle('menu--open');
+  });
+
+  return menu;
+}
+
+
+
+ 
+const header = document.querySelector('.header')
+header.appendChild(createMenu(menuItems))
+
+
+// const header = document.querySelector('.header');
+// const menuBtn = document.querySelector('.menu-button');
+
+// function menu (menuItems){
+//   const menuMenu = document.createElement('div');
+//   const menuList = document.createElement('ul');
+//   menuItems.forEach(items => {
+//     const menuListItems = document.createElement('li');
+//     menuList.appendChild(menuListItems);
+//     menuListItems.textContent = items;
+//   })
+//   menuMenu.appendChild(menuList);
+  
+//   menuMenu.classList.add('menu');
+
+// menuBtn.addEventListener('click', e => {
+//   menuMenu.classList.toggle('menu--open');
+//   console.log('Button Clicked');
+//   console.log("works fine");
+// })
+
+// return menuMenu;
+// }
+
+// header.appendChild(menu(menuItems))
